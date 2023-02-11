@@ -1,10 +1,54 @@
 <!DOCTYPE html>
 <html>
   <head>
+      <style>
+      .heart {
+        width: 40px;
+        height: 40px;
+        position: relative;
+        margin: 50px auto;
+      }
+      .heart:before,
+      .heart:after {
+        content: "";
+        width: 20px;
+        height: 20px;
+        background: red;
+        border-radius: 20px 20px 0;
+        position: absolute;
+        top: 0;
+        left: 10px;
+      }
+      .heart:after {
+        left: auto;
+        right: 10px;
+      }
+      .heart:before {
+        transform: rotate(45deg);
+      }
+      .heart:after {
+        transform: rotate(-45deg);
+      }
+      @keyframes beat {
+        0% {
+          transform: scale(1);
+        }
+        14% {
+          transform: scale(1.3);
+        }
+        28% {
+          transform: scale(1);
+        }
+      }
+      .heart.beat {
+        animation: beat 1s infinite;
+      }
+    </style>
     <title>My husband</title>
   </head>
   <body>
     <h1>Welcome to my page</h1>
     <p>Lose weight</p>
+    <div class="heart beat"></div>
   </body>
 </html>
